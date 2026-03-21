@@ -5,6 +5,7 @@
 #include <sys/types.h>    
 #include <sys/socket.h>
 #include <errno.h>
+#include <string.h>
 #include <unistd.h>
 
 
@@ -15,6 +16,7 @@ static int createNonblocking()
     {
         LOG_FATAL("%s:%s:%d listen socket create err:%d \n", __FILE__, __FUNCTION__, __LINE__, errno);
     }
+    return sockfd;
 }
 
 Acceptor::Acceptor(EventLoop *loop, const InetAddress &listenAddr, bool reuseport)

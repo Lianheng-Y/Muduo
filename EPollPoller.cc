@@ -4,7 +4,7 @@
 
 #include <errno.h>
 #include <unistd.h>
-#include <strings.h>
+#include <string.h>
 
 // channel未添加到poller中
 const int kNew = -1;  // channel的成员index_ = -1
@@ -42,7 +42,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList *activeChannels)
     {
         LOG_INFO("%d events happened \n", numEvents);
         fillActiveChannels(numEvents, activeChannels);
-        if (numEvents == events_.size())
+        if (numEvents == (int)events_.size())
         {
             events_.resize(events_.size() * 2);
         }
@@ -130,7 +130,7 @@ void EPollPoller::fillActiveChannels(int numEvents, ChannelList *activeChannels)
 void EPollPoller::update(int operation, Channel *channel)
 {
     epoll_event event;
-    bzero(&event, sizeof event);
+    memset(&event, 0, sizeof event);
     
     int fd = channel->fd();
 

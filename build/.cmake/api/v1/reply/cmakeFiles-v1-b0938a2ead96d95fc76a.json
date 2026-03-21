@@ -281,7 +281,7 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-FindBinUtils.cmake"
+			"path" : "/usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -535,7 +535,7 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-FindBinUtils.cmake"
+			"path" : "/usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -584,22 +584,17 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-C.cmake"
+			"path" : "/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang.cmake"
+			"path" : "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Platform/Linux-Clang-C.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -688,17 +683,12 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX.cmake"
+			"path" : "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake"
 		},
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Platform/Linux-Clang-CXX.cmake"
+			"path" : "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
 		},
 		{
 			"isCMake" : true,
@@ -764,26 +754,6 @@
 			"isCMake" : true,
 			"isExternal" : true,
 			"path" : "/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX-FeatureTests.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX-TestableFeatures.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX-FeatureTests.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX-TestableFeatures.cmake"
 		},
 		{
 			"isCMake" : true,

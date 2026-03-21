@@ -1,5 +1,5 @@
 testserver :
-	g++ testserver.cc -o testserver -lmymuduo -lpthread -g
+	g++ testserver.cc -o testserver -I../ -L../lib -lmymuduo -lpthread -g
 
 clean :
 	rm -f testserver

@@ -16,6 +16,11 @@ std::string Timestamp::toString() const
 {
     char buf[128] = {0};
     tm *tm_time = localtime(&microSecondsSinceEpoch_);
+    if (tm_time == nullptr)
+    {
+        snprintf(buf, 128, "invalid time");
+        return buf;
+    }
     snprintf(buf, 128, "%4d/%02d/%02d %02d:%02d:%02d", 
         tm_time->tm_year + 1900,
         tm_time->tm_mon + 1,
