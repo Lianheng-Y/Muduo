@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/lyh/project/muduo/Acceptor.cc" "CMakeFiles/mymuduo.dir/Acceptor.cc.o" "gcc" "CMakeFiles/mymuduo.dir/Acceptor.cc.o.d"
+  "/home/lyh/project/muduo/AsyncLogging.cc" "CMakeFiles/mymuduo.dir/AsyncLogging.cc.o" "gcc" "CMakeFiles/mymuduo.dir/AsyncLogging.cc.o.d"
   "/home/lyh/project/muduo/Buffer.cc" "CMakeFiles/mymuduo.dir/Buffer.cc.o" "gcc" "CMakeFiles/mymuduo.dir/Buffer.cc.o.d"
   "/home/lyh/project/muduo/Channel.cc" "CMakeFiles/mymuduo.dir/Channel.cc.o" "gcc" "CMakeFiles/mymuduo.dir/Channel.cc.o.d"
   "/home/lyh/project/muduo/CurrentThread.cc" "CMakeFiles/mymuduo.dir/CurrentThread.cc.o" "gcc" "CMakeFiles/mymuduo.dir/CurrentThread.cc.o.d"

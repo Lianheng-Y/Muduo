@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "/home/lyh/project/muduo/lib/libmymuduo.so"
   "CMakeFiles/mymuduo.dir/Acceptor.cc.o"
   "CMakeFiles/mymuduo.dir/Acceptor.cc.o.d"
+  "CMakeFiles/mymuduo.dir/AsyncLogging.cc.o"
+  "CMakeFiles/mymuduo.dir/AsyncLogging.cc.o.d"
   "CMakeFiles/mymuduo.dir/Buffer.cc.o"
   "CMakeFiles/mymuduo.dir/Buffer.cc.o.d"
   "CMakeFiles/mymuduo.dir/Channel.cc.o"

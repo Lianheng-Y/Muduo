@@ -50,6 +50,8 @@
     #define LOG_DEBUG(logmsgFormat, ...)
 #endif
 
+#include <functional>
+
 // 定义日志的级别  INFO  ERROR  FATAL  DEBUG 
 enum LogLevel
 {
@@ -63,12 +65,19 @@ enum LogLevel
 class Logger : noncopyable
 {
 public:
+    using OutputFunc = std::function<void(const char* msg, int len)>;
+    using FlushFunc = std::function<void()>;
+
     // 获取日志唯一的实例对象
     static Logger& instance();
     // 设置日志级别
     void setLogLevel(int level);
     // 写日志
     void log(std::string msg);
+
+    static void setOutput(OutputFunc);
+    static void setFlush(FlushFunc);
+
 private:
     int logLevel_;
 };

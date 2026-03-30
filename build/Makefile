@@ -153,6 +153,30 @@ Acceptor.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/Acceptor.cc.s
 .PHONY : Acceptor.cc.s
 
+AsyncLogging.o: AsyncLogging.cc.o
+.PHONY : AsyncLogging.o
+
+# target to build an object file
+AsyncLogging.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/AsyncLogging.cc.o
+.PHONY : AsyncLogging.cc.o
+
+AsyncLogging.i: AsyncLogging.cc.i
+.PHONY : AsyncLogging.i
+
+# target to preprocess a source file
+AsyncLogging.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/AsyncLogging.cc.i
+.PHONY : AsyncLogging.cc.i
+
+AsyncLogging.s: AsyncLogging.cc.s
+.PHONY : AsyncLogging.s
+
+# target to generate assembly for a file
+AsyncLogging.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mymuduo.dir/build.make CMakeFiles/mymuduo.dir/AsyncLogging.cc.s
+.PHONY : AsyncLogging.cc.s
+
 Buffer.o: Buffer.cc.o
 .PHONY : Buffer.o
 
@@ -549,6 +573,9 @@ help:
 	@echo "... Acceptor.o"
 	@echo "... Acceptor.i"
 	@echo "... Acceptor.s"
+	@echo "... AsyncLogging.o"
+	@echo "... AsyncLogging.i"
+	@echo "... AsyncLogging.s"
 	@echo "... Buffer.o"
 	@echo "... Buffer.i"
 	@echo "... Buffer.s"

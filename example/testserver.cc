@@ -1,7 +1,21 @@
 #include <mymuduo/TcpServer.h>
 #include <mymuduo/Logger.h>
+#include <mymuduo/AsyncLogging.h>
 #include <string>
 #include <functional>
+#include <memory>
+
+static std::unique_ptr<AsyncLogging> g_asyncLog;
+
+void asyncOutput(const char* msg, int len)
+{
+    g_asyncLog->append(msg, len);
+}
+
+void asyncFlush()
+{
+    g_asyncLog->stop();
+}
 
 class EchoServer{
 public:
@@ -36,12 +50,16 @@ private:
 };
 
 int main() {
+    g_asyncLog.reset(new AsyncLogging("EchoServer", 500*1024*1024));
+    Logger::setOutput(asyncOutput);
+    Logger::setFlush(asyncFlush);
+    g_asyncLog->start();
+
     EventLoop loop;
     InetAddress addr(8000);
     EchoServer server(&loop, addr, "EchoServer-01");
     server.start();
     loop.loop();
 
-    // std::cout << "hello" << std::endl;
     return 0;
 }
