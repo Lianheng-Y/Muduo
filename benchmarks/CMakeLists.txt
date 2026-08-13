@@ -1,0 +1,3 @@
+add_executable(benchmark_client benchmark_client.cc)
+target_compile_features(benchmark_client PRIVATE cxx_std_11)
+target_link_libraries(benchmark_client PRIVATE Threads::Threads)

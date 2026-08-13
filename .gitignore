@@ -1,0 +1,39 @@
+# CMake and compiler output
+/build/
+/cmake-build-*/
+CMakeUserPresets.json
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+compile_commands.json
+
+# Generated libraries and programs
+*.a
+*.so
+*.so.*
+*.dylib
+/bin/
+/lib/
+/examples/echo_server
+/benchmarks/benchmark_client
+/tests/mymuduo_tests
+
+# Runtime output and profiling data
+*.log
+*.out
+*.perf
+*.folded
+*.prof
+/perf.data*
+/gmon.out
+
+# IDE and editor state
+/.vscode/
+/.idea/
+*.swp
+*~
+
+# Local packaging and coverage output
+/dist/
+/coverage/
