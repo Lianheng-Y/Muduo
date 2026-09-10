@@ -31,6 +31,7 @@ add_library(mymuduo
     src/TcpServer.cc
     src/Thread.cc
     src/Timestamp.cc
+    src/TimerQueue.cc
 )
 add_library(mymuduo::mymuduo ALIAS mymuduo)
 

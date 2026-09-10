@@ -12,6 +12,7 @@
 
 class Channel;
 class Poller;
+class TimerQueue;
 
 // 时间循环类  主要包含了两个大模块 Channel   Poller（epoll的抽象）
 class EventLoop : noncopyable
@@ -36,6 +37,10 @@ public:
 
     // 用来唤醒loop所在的线程的
     void wakeup();
+    using TimerCallback = std::function<void()>;
+    uint64_t runAfter(int64_t delayMs, TimerCallback cb);
+    uint64_t runEvery(int64_t intervalMs, TimerCallback cb);
+    void cancelTimer(uint64_t id);
 
     // EventLoop的方法 =》 Poller的方法
     void updateChannel(Channel *channel);
@@ -65,5 +70,6 @@ private:
 
     std::atomic_bool callingPendingFunctors_; // 标识当前loop是否有需要执行的回调操作
     std::vector<Functor> pendingFunctors_; // 存储loop需要执行的所有的回调操作
-    std::mutex mutex_; // 互斥锁，用来保护上面vector容器的线程安全操作
+    std::mutex mutex_;
+    std::unique_ptr<TimerQueue> timerQueue_; // 互斥锁，用来保护上面vector容器的线程安全操作
 };

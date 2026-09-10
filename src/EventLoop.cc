@@ -2,6 +2,7 @@
 #include "Logger.h"
 #include "Poller.h"
 #include "Channel.h"
+#include "TimerQueue.h"
 
 #include <sys/eventfd.h>
 #include <unistd.h>
@@ -34,6 +35,7 @@ EventLoop::EventLoop()
     , wakeupFd_(createEventfd())
     , wakeupChannel_(new Channel(this, wakeupFd_))
     , callingPendingFunctors_(false)
+    , timerQueue_(new TimerQueue(this))
 {
     LOG_DEBUG("EventLoop created %p in thread %d \n", this, threadId_);
     if (t_loopInThisThread)
@@ -50,6 +52,10 @@ EventLoop::EventLoop()
     // 每一个eventloop都将监听wakeupchannel的EPOLLIN读事件了
     wakeupChannel_->enableReading();
 }
+
+uint64_t EventLoop::runAfter(int64_t d, TimerCallback cb){ return timerQueue_->addTimer(std::move(cb), d); }
+uint64_t EventLoop::runEvery(int64_t d, TimerCallback cb){ return timerQueue_->addTimer(std::move(cb), d, d); }
+void EventLoop::cancelTimer(uint64_t id){ timerQueue_->cancel(id); }
 
 EventLoop::~EventLoop()
 {
